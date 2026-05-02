@@ -20,17 +20,24 @@ A React-based expense and income tracker with category breakdowns and persistent
 
 ### Project Structure
 
-src/
-├── components/
-│ ├── TransactionForm.jsx # Controlled form — add transactions
-│ ├── TransactionList.jsx # Renders + deletes transactions
-│ ├── Summary.jsx # Balance, income, expense totals
-│ └── Chart.jsx # Doughnut chart by category
-├── context/
-│ └── FinanceContext.jsx # Global state + derived values
-├── hooks/
-│ └── useLocalStorage.js # Syncs state to localStorage
-└── App.jsx
+```
+finance-tracker/
+├── src/
+│   ├── components/
+│   │   ├── TransactionForm.jsx
+│   │   ├── TransactionList.jsx
+│   │   ├── Summary.jsx
+│   │   └── Chart.jsx
+│   ├── context/
+│   │   └── FinanceContext.jsx
+│   ├── hooks/
+│   │   └── useLocalStorage.js
+│   ├── App.jsx
+│   └── main.jsx
+├── public/
+├── package.json
+└── index.html
+```
 
 ### Getting Started
 
