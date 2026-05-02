@@ -1,12 +1,16 @@
+import Summary from "./components/Summary";
 import TransactionForm from "./components/TransactionForm";
+import TransactionList from "./components/TransactionList";
 
 export default function App() {
   return (
-    <div className="app">
+    <div style={{ maxWidth: "600px", margin: "0 auto", padding: "2rem" }}>
       <h1>Finance Tracker</h1>
-      <div className="container">
-        <TransactionForm />
-      </div>
+      <Summary />
+      <hr />
+      <TransactionForm />
+      <hr />
+      <TransactionList />
     </div>
   );
 }
