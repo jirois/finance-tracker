@@ -52,7 +52,7 @@ export function FinanceProvider({ children }) {
     .filter((t) => t.type === "expense")
     .reduce((sum, t) => sum + t.amount, 0);
 
-  const balance = income + expenses;
+  const balance = income - expenses;
 
   return (
     <FinanceContext.Provider

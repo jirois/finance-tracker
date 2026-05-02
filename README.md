@@ -1,16 +1,57 @@
-# React + Vite
+## Personal Finance Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based expense and income tracker with category breakdowns and persistent storage — built as part of a May 2026 portfolio rebuild.
 
-Currently, two official plugins are available:
+### What It Does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Add income and expense transactions with a description, amount, and category
+- See your balance, total income, and total expenses update in real time
+- Visualize spending by category in a doughnut chart
+- Data persists across sessions via localStorage — no backend needed
 
-## React Compiler
+### Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Layer       | Tool                         |
+| ----------- | ---------------------------- |
+| UI          | React (Vite)                 |
+| State       | useReducer + Context API     |
+| Persistence | localStorage via custom hook |
+| Charts      | Chart.js + react-chartjs-2   |
 
-## Expanding the ESLint configuration
+### Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+src/
+├── components/
+│ ├── TransactionForm.jsx # Controlled form — add transactions
+│ ├── TransactionList.jsx # Renders + deletes transactions
+│ ├── Summary.jsx # Balance, income, expense totals
+│ └── Chart.jsx # Doughnut chart by category
+├── context/
+│ └── FinanceContext.jsx # Global state + derived values
+├── hooks/
+│ └── useLocalStorage.js # Syncs state to localStorage
+└── App.jsx
+
+### Getting Started
+
+```
+git clone https://github.com/yourusername/finance-tracker.git
+cd finance-tracker
+npm install
+npm run dev
+```
+
+### Key Concepts Practiced
+
+- useReducer for predictable state mutations
+- Context API to avoid prop drilling
+- Deriving UI values (balance, totals) from a single source of truth
+- Custom hooks for reusable logic
+- Third-party chart library integration
+
+### Roadmap
+
+- Filter transactions by month
+- Sort by date or amount
+- Export to CSV
+- Monthly budget limit with overspend warning
