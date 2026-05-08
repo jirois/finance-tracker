@@ -1,6 +1,6 @@
 ## Personal Finance Tracker
 
-A React-based expense and income tracker with category breakdowns and persistent storage — built as part of a May 2026 portfolio rebuild.
+> A React-based expense and income tracker with category breakdowns and persistent storage.
 
 ### What It Does
 
